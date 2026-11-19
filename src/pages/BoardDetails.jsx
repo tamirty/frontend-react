@@ -11,9 +11,11 @@ export function BoardDetails() {
 
   const { boardId } = useParams()
   const board = useSelector(storeState => storeState.boardModule.board)
+
   useEffect(() => {
     loadBoard(boardId)
   }, [boardId])
+
   return (
     <section className="board-details">
       <h1>Board Details</h1>
@@ -42,22 +44,7 @@ export function BoardDetails() {
         <pre> {JSON.stringify(board.groups, null, 2)} </pre>
       </div>
       }
-      <Outlet/>
+      <Outlet />
     </section>
   )
-} return (
-  <dialog className = "task-details" ref={dialog}>
-< Link to={`/board/${boardId}`}>
-  <button>X</button>
-</Link >
-  <h1>Task Details</h1>
-{
-  task &&
-    <div>
-      <h3> {task.title}</h3>
-      <div className="cmps-container">
-      {cmps.map((cmp, idx) => <DynamicCmp cmp = { cmp }key = { idx }/>)}
-    </div>
-</div >}
-</dialog >
-)
+} 
