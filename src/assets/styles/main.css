@@ -23,6 +23,9 @@
 @import "cmps/board/BoardList";
 @import "cmps/board/BoardPreview";
 @import "cmps/board/BoardFilter";
+@import "cmps/board/BoardDetails";
+@import "cmps/board/GroupList";
+@import "cmps/board/GroupPreview";
 
 @import "cmps/review/ReviewEdit";
 @import "cmps/review/ReviewList";

@@ -5,6 +5,8 @@ import { userService } from '../user'
 
 const STORAGE_KEY = 'board'
 
+_createDemoBoards()
+
 export const boardService = {
     query,
     getById,
@@ -15,27 +17,14 @@ export const boardService = {
 window.cs = boardService
 
 
-async function query(filterBy = { txt: '', minSpeed: 0 }) {
+async function query(filterBy = { txt: '' }) {
     var boards = await storageService.query(STORAGE_KEY)
-    const { txt, minSpeed, sortField, sortDir } = filterBy
 
-    if (txt) {
+    if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
-        boards = boards.filter(board => regex.test(board.vendor) || regex.test(board.description))
+        boards = boards.filter(board => regex.test(board.title))
     }
-    if (minSpeed) {
-        boards = boards.filter(board => board.speed >= minSpeed)
-    }
-    if(sortField === 'vendor'){
-        boards.sort((board1, board2) => 
-            board1[sortField].localeCompare(board2[sortField]) * +sortDir)
-    }
-    if(sortField === 'speed'){
-        boards.sort((board1, board2) => 
-            (board1[sortField] - board2[sortField]) * +sortDir)
-    }
-    
-    boards = boards.map(({ _id, vendor, speed, owner }) => ({ _id, vendor, speed, owner }))
+
     return boards
 }
 
@@ -82,4 +71,70 @@ async function addBoardMsg(boardId, txt) {
     await storageService.put(STORAGE_KEY, board)
 
     return msg
+}
+
+async function _createDemoBoards() {
+    const boards = await storageService.query(STORAGE_KEY)
+
+    if (boards.length) return
+
+    const demoBoards = [
+        {
+            _id: 'b101',
+            title: 'Robot dev proj',
+            isStarred: false,
+            createdBy: {
+                _id: 'u101',
+                fullname: 'Abi Abambi',
+                imgUrl: ''
+            },
+            style: {
+                backgroundImage: ''
+            },
+            labels: [],
+            members: [],
+            groups: [
+                {
+                    id: 'g101',
+                    title: 'To Do',
+                    tasks: [
+                        { id: 'c101', title: 'Replace logo' },
+                        { id: 'c102', title: 'Add samples' }
+                    ],
+                    style: {}
+                },
+                {
+                    id: 'g102',
+                    title: 'In Progress',
+                    tasks: [
+                        { id: 'c103', title: 'Build homepage' }
+                    ],
+                    style: {}
+                }
+            ],
+            activities: []
+        },
+        {
+            _id: 'b102',
+            title: 'Website project',
+            isStarred: true,
+            labels: [],
+            members: [],
+            groups: [
+                {
+                    id: 'g103',
+                    title: 'To Do',
+                    tasks: [
+                        { id: 'c104', title: 'Create header' }
+                    ],
+                    style: {}
+                }
+            ],
+            activities: []
+        }
+    ]
+    for (const board of demoBoards) {
+        await storageService.post(STORAGE_KEY, board)
+    }
+
 }

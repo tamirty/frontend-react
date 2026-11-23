@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 export function BoardPreview({ board }) {
     return <article className="board-preview">
         <header>
-            <Link to={`/board/${board._id}`}>{board.vendor}</Link>
+            <Link to={`/board/${board._id}`}>{board.title}</Link>
         </header>
 
-        <p>Speed: <span>{board.speed.toLocaleString()} Km/h</span></p>
-        {board.owner && <p>Owner: <span>{board.owner.fullname}</span></p>}
-        
+        {board.createdBy && (
+            <p>Created by: {board.createdBy.fullname}</p>
+        )}
+
+        <p>Groups: {board.groups?.length || 0}</p>
     </article>
 }
