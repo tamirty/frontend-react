@@ -12,7 +12,7 @@ import { BoardFilter } from '../cmps/BoardFilter'
 
 export function BoardIndex() {
 
-    const [ filterBy, setFilterBy ] = useState(boardService.getDefaultFilter())
+    const [filterBy, setFilterBy] = useState(boardService.getDefaultFilter())
     const boards = useSelector(storeState => storeState.boardModule.boards)
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export function BoardIndex() {
     async function onRemoveBoard(boardId) {
         try {
             await removeBoard(boardId)
-            showSuccessMsg('Board removed')            
+            showSuccessMsg('Board removed')
         } catch (err) {
             showErrorMsg('Cannot remove board')
         }
@@ -36,20 +36,21 @@ export function BoardIndex() {
             showSuccessMsg(`Board added (id: ${savedBoard._id})`)
         } catch (err) {
             showErrorMsg('Cannot add board')
-        }        
+        }
     }
 
     async function onUpdateBoard(board) {
-        const speed = +prompt('New speed?', board.speed) || 0
-        if(speed === 0 || speed === board.speed) return
+        const title = prompt('New title?', board.title)
+        if (!title?.trim()) return
 
-        const boardToSave = { ...board, speed }
+        const boardToSave = { ...board, title }
+        
         try {
             const savedBoard = await updateBoard(boardToSave)
-            showSuccessMsg(`Board updated, new speed: ${savedBoard.speed}`)
+            showSuccessMsg(`Board updated, new title: ${savedBoard.title}`)
         } catch (err) {
             showErrorMsg('Cannot update board')
-        }        
+        }
     }
 
     return (
@@ -59,10 +60,10 @@ export function BoardIndex() {
                 {<button onClick={onAddBoard}>Add a Board</button>}
             </header>
             <BoardFilter filterBy={filterBy} setFilterBy={setFilterBy} />
-            <BoardList 
+            <BoardList
                 boards={boards}
-                onRemoveBoard={onRemoveBoard} 
-                onUpdateBoard={onUpdateBoard}/>
+                onRemoveBoard={onRemoveBoard}
+                onUpdateBoard={onUpdateBoard} />
         </section>
     )
 }
