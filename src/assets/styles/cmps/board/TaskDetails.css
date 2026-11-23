@@ -1,0 +1,14 @@
+.task-description {
+    padding: 16px;
+    color: #172b4d;
+}
+
+.task-description h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.task-description p {
+    font-size: 14px;
+    line-height: 1.5;
+}

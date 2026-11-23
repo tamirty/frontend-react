@@ -21,3 +21,9 @@
     color: white;
     text-decoration: none;
 }
+.group-list {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    overflow-x: auto;
+}

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadBoard, addBoardMsg } from '../store/actions/board.actions'
 import { GroupList } from '../cmps/GroupList'
+import '../assets/styles/cmps/board/BoardDetails.css'
 
 
 export function BoardDetails() {

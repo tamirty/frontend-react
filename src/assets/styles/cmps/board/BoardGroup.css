@@ -1,0 +1,29 @@
+.group-preview {
+    width: 280px;
+    min-width: 280px;
+    background-color: #f1f2f4;
+    color: #172b4d;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.add-task-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #44546f;
+    text-align: left;
+    cursor: pointer;
+}
+
+.add-task-btn:hover {
+    background-color: #dcdfe4;
+}
