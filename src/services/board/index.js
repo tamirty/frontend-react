@@ -5,9 +5,19 @@ import { getRandomIntInclusive, makeId } from '../util.service'
 import { boardService as local } from './board.service.local'
 import { boardService as remote } from './board.service.remote'
 
+const service = (VITE_LOCAL === 'true') ? local : remote
+
+export const boardService = {
+    getEmptyBoard,
+    getEmptyGroup,
+    getEmptyTask,
+    getDefaultFilter,
+    ...service
+}
+
 function getEmptyBoard() {
     return {
-        _id: makeId(),
+        _id: '',
         title: '',
         isStarred: false,
         archivedAt: null,
@@ -21,6 +31,7 @@ function getEmptyBoard() {
         createdBy: null,
     }
 }
+
 function getEmptyGroup() {
     return {
         id: makeId(),
@@ -56,8 +67,6 @@ function getDefaultFilter() {
     }
 }
 
-const service = (VITE_LOCAL === 'true') ? local : remote
-export const boardService = { getEmptyBoard, getDefaultFilter, ...service }
 
 // Easy access to this service from the dev tools console
 // when using script - dev / dev:local
