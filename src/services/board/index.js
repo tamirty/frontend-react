@@ -6,12 +6,46 @@ import { boardService as local } from './board.service.local'
 import { boardService as remote } from './board.service.remote'
 
 function getEmptyBoard() {
-	return {
-        _id: '',
-		vendor: makeId(),
-		speed: getRandomIntInclusive(80, 240),
-		msgs: [],
-	}
+    return {
+        _id: makeId(),
+        title: '',
+        isStarred: false,
+        archivedAt: null,
+        style: {
+            backgroundImage: ''
+        },
+        members: [],
+        labels: [],
+        groups: [],
+        activities: [],
+        createdBy: null,
+    }
+}
+function getEmptyGroup() {
+    return {
+        id: makeId(),
+        title: '',
+        archivedAt: null,
+        tasks: [],
+        style: {}
+    }
+}
+function getEmptyTask() {
+    return {
+        id: makeId(),
+        title: '',
+        status: '',
+        priority: '',
+        dueDate: null,
+        description: '',
+        memberIds: [],
+        labelIds: [],
+        style: {},
+        archivedAt: null,
+        comments: [],
+        checklists: [],
+        byMember: null,
+    }
 }
 
 function getDefaultFilter() {
