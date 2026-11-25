@@ -1,7 +1,7 @@
 .group-preview {
     width: 280px;
     min-width: 280px;
-    background-color: #f1f2f4;
+    background-color: #38bd38;
     color: #172b4d;
     padding: 12px;
     border-radius: 8px;
@@ -25,5 +25,5 @@
 }
 
 .add-task-btn:hover {
-    background-color: #dcdfe4;
+    background-color: #1fad30;
 }

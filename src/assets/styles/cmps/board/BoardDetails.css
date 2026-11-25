@@ -2,7 +2,7 @@
     min-height: 100vh;
     background-color: #0079bf;
     padding: 20px;
-    color: white;
+    color: rgb(172, 45, 45);
 }
 
 .board-header {
@@ -18,7 +18,7 @@
 }
 
 .board-header a {
-    color: white;
+    color: rgb(173, 69, 69);
     text-decoration: none;
 }
 .group-list {
