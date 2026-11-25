@@ -1,6 +1,6 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId, makeLorem } from '../util.service'
+import { makeId } from '../util.service'
 import { userService } from '../user'
 
 const STORAGE_KEY = 'board'
@@ -91,8 +91,8 @@ async function _createDemoBoards() {
                     id: 'g101',
                     title: 'To Do',
                     tasks: [
-                        { id: 'c101', title: 'Replace logo', description: makeLorem(), assignedMembers: [], isComplete: false},
-                        { id: 'c102', title: 'Add samples', description: makeLorem(), assignedMembers: [], isComplete: false}
+                        { id: 'c101', title: 'Replace logo' },
+                        { id: 'c102', title: 'Add samples' }
                     ],
                     style: {}
                 },
@@ -100,7 +100,7 @@ async function _createDemoBoards() {
                     id: 'g102',
                     title: 'In Progress',
                     tasks: [
-                        { id: 'c103', title: 'Build homepage', description: makeLorem(), assignedMembers: [], isComplete: true}
+                        { id: 'c103', title: 'Build homepage' }
                     ],
                     style: {}
                 }
@@ -118,7 +118,7 @@ async function _createDemoBoards() {
                     id: 'g103',
                     title: 'To Do',
                     tasks: [
-                        { id: 'c104', title: 'Create header', description: makeLorem(), assignedMembers: [], isComplete: true}
+                        { id: 'c104', title: 'Create header' }
                     ],
                     style: {}
                 }
