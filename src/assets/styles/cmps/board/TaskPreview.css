@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .board-details .task-list {
     display: flex;
     flex-direction: column;
@@ -7,6 +8,17 @@
 
     padding: 0;
     margin: 0;
+=======
+.task-preview {
+    background-color: rgb(197, 56, 56);
+    color: #172b4d;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(9, 30, 66, 0.25);
+    cursor: pointer;
+    transition: 0.2s;
+>>>>>>> 5e41a50c232fc9c8238b5809fac6c53cb3bef4bd
 }
 
 .board-details .task-list > li {

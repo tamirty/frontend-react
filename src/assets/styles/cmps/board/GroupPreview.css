@@ -1,5 +1,5 @@
 .group-preview {
-    background-color: #f1f2f4;
+    background-color: #11d20e;
     color: #172b4d;
     border-radius: 12px;
     padding: 12px;
@@ -26,7 +26,7 @@
 }
 
 .task-preview {
-    background-color: white;
+    background-color: rgb(25, 201, 34);
     padding: 12px;
     border-radius: 8px;
     box-shadow: 0 1px 2px #0002;
@@ -34,7 +34,7 @@
 }
 
 .task-preview:hover {
-    background-color: #f7f8f9;
+    background-color: #13c71c;
 }
 
 .add-task-btn {
@@ -48,5 +48,5 @@
 }
 
 .add-task-btn:hover {
-    background-color: #dfe1e6;
+    background-color: #25c925;
 }
