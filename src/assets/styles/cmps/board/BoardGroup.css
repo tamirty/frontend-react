@@ -2,30 +2,15 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start;
     gap: 12px;
-
     padding: 20px;
     margin: 0;
-
     overflow-x: auto;
 }
 
-.board-details .group-preview {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 8px;
-
-    flex: 0 0 272px;
-    width: 272px;
-    height: auto;
-    min-height: 0;
-
-    padding: 8px;
-    margin: 0;
-
+.group-preview {
+    width: 280px;
+    min-width: 280px;
     background-color: #f1f2f4;
     color: #172b4d;
 
@@ -113,6 +98,6 @@
     cursor: pointer;
 }
 
-.board-details .add-group-btn:hover {
-    background-color: #ffffff50;
+.add-task-btn:hover {
+    background-color: #dcdfe4;
 }
