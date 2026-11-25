@@ -1,18 +1,28 @@
 .board-index {
-    & header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    color: #172b4d;
+}
 
-        padding-block: .3em;
-    }
+.board-index > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
 
-    & h2 {
-        margin: 0;
-        font-size: 1.3em;
-    }
+.board-index h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
 
-    & button {
-        margin-inline-end: 0;
-    }
+.board-index > header button {
+    background-color: #0c66e4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
 }

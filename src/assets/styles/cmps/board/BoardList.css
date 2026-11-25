@@ -1,7 +1,65 @@
 .board-list {
-    --min-column-size: 220px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-size), 1fr));
-    gap: .5em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.board-list > li {
+    position: relative;
+    background-color: #0079bf;
+    border-radius: 8px;
+    min-height: 120px;
+    overflow: hidden;
+    transition: filter 0.2s;
+}
+
+.board-list > li:nth-child(2n) {
+    background-color: #89609e;
+}
+
+.board-list > li:nth-child(3n) {
+    background-color: #519839;
+}
+
+.board-list > li:hover {
+    filter: brightness(0.92);
+}
+
+.board-list .actions {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+
+    display: flex;
+    gap: 6px;
+
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.board-list > li:hover .actions,
+.board-list > li:focus-within .actions {
+    opacity: 1;
+}
+
+.board-list .actions button {
+    background-color: #ffffff30;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.board-list .actions button:hover {
+    background-color: #ffffff50;
+}
+
+.board-list > li > a:hover {
+    text-decoration: none;
 }

@@ -1,13 +1,23 @@
 .board-preview {
-    color: var(--gray2);
+    padding: 14px;
+    min-height: 120px;
+    color: white;
+}
 
-    > header {
-        font-size: 1.2em;
-        color: var(--gray1);
-    }
+.board-preview > header {
+    margin-bottom: 10px;
+    padding: 0;
+}
 
-    & p {
-        margin-block: 0 0.2rem;
-        font-size: .9em;
-    }
+.board-preview a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.board-preview p {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #ffffffcc;
 }

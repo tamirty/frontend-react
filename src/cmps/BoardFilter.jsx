@@ -39,7 +39,7 @@ export function BoardFilter({ filterBy, setFilterBy }) {
                 type="text"
                 name="txt"
                 value={filterToEdit.txt}
-                placeholder="Free text"
+                placeholder="Search boards..."
                 onChange={handleChange}
                 required
             />
