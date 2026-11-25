@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .board-details .group-list {
     display: flex;
     flex-direction: row;
@@ -10,15 +9,6 @@
     margin: 0;
 
     overflow-x: auto;
-=======
-.group-preview {
-    width: 280px;
-    min-width: 280px;
-    background-color: #38bd38;
-    color: #172b4d;
-    padding: 12px;
-    border-radius: 8px;
->>>>>>> 5e41a50c232fc9c8238b5809fac6c53cb3bef4bd
 }
 
 .board-details .group-preview {
@@ -76,7 +66,6 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 .board-details .group-menu-btn:hover {
     background-color: #091e4214;
 }
@@ -126,8 +115,4 @@
 
 .board-details .add-group-btn:hover {
     background-color: #ffffff50;
-=======
-.add-task-btn:hover {
-    background-color: #1fad30;
->>>>>>> 5e41a50c232fc9c8238b5809fac6c53cb3bef4bd
 }
